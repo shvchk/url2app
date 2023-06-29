@@ -1,20 +1,21 @@
+import '../util/browser-polyfill.min.js';
 import {defaultPrefs} from '../defaultPrefs.js';
 
 const info = document.getElementById('info');
 
 function restore() {
-  chrome.storage.local.get(defaultPrefs, prefs => {
+  browser.storage.local.get(defaultPrefs).then(prefs => {
     document.getElementById('allowedUrlPatterns').value = prefs.allowedUrlPatterns.join('\n');
   });
 }
 
 function save() {
-  chrome.storage.local.set({
+  browser.storage.local.set({
     allowedUrlPatterns: document.getElementById('allowedUrlPatterns').value
       .split(/[,\n]/)
       .map(s => s.trim())
       .filter((h, i, l) => h && l.indexOf(h) === i),
-  }, () => {
+  }).then(() => {
     info.textContent = 'Saved';
     restore();
     window.setTimeout(() => info.textContent = '', 1000);
