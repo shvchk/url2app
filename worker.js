@@ -21,28 +21,28 @@ chrome.runtime.onInstalled.addListener(once);
 
 
 function updateMenus(prefs) {
-  chrome.contextMenus.update("url2app-link", {
-    "targetUrlPatterns": prefs.allowedUrlPatterns
+  chrome.contextMenus.update('url2app-link', {
+    'targetUrlPatterns': prefs.allowedUrlPatterns
   });
 
-  chrome.contextMenus.update("url2app-page", {
-    "documentUrlPatterns": prefs.allowedUrlPatterns
+  chrome.contextMenus.update('url2app-page', {
+    'documentUrlPatterns': prefs.allowedUrlPatterns
   });
 }
 
 function init(prefs) {
   chrome.contextMenus.create({
-    "id": "url2app-link",
-    "title": "Open in app",
-    "contexts": ['link'],
-    "targetUrlPatterns": prefs.allowedUrlPatterns
+    'id': 'url2app-link',
+    'title': 'Open in app',
+    'contexts': ['link'],
+    'targetUrlPatterns': prefs.allowedUrlPatterns
   });
 
   chrome.contextMenus.create({
-    "id": "url2app-page",
-    "title": "Open in app",
-    "contexts": ['page'],
-    "documentUrlPatterns": prefs.allowedUrlPatterns
+    'id': 'url2app-page',
+    'title': 'Open in app',
+    'contexts': ['page'],
+    'documentUrlPatterns': prefs.allowedUrlPatterns
   });
 }
 

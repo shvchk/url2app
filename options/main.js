@@ -15,7 +15,7 @@ function save() {
       .map(s => s.trim())
       .filter((h, i, l) => h && l.indexOf(h) === i),
   }, () => {
-    info.textContent = "Saved";
+    info.textContent = 'Saved';
     restore();
     window.setTimeout(() => info.textContent = '', 1000);
   });
