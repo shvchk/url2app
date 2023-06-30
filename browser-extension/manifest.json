@@ -11,8 +11,7 @@
   },
   "action": {},
   "options_ui": {
-    "page": "options/index.html",
-    "open_in_tab": true
+    "page": "options/index.html"
   },
   "background": {
     "service_worker": "worker.js",
