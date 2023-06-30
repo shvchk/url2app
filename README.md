@@ -57,8 +57,6 @@ Browser extension to open any page / link / URL in any external app using `url2a
 
   - Create a script (e.g. `~/.local/bin/url2app.sh`) to redirect incoming links to actual apps, see [example `url2app.sh`](host/nix/url2app.sh)
 
-    Example script just runs
-
   - Create a `.desktop` file (e.g. `~/.local/share/applications/url2app.desktop`) to run that script, see [example `url2app.desktop`](host/nix/url2app.desktop)
 
   - Register that `.desktop` file as a `url2app://` protocol handler:
