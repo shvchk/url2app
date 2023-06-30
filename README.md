@@ -28,25 +28,14 @@ Browser extension to open any page / link / URL in any external app using `url2a
 
 - **Automatic**
 
-  This will do everything described in **Manual** subsection below, automatically.
+  - Review [install script](host/nix/install.sh)
 
-  - **Easier, less secure way** — just download and run install script:
+  - Download and run it:
     ```sh
     wget -O- https://github.com/shvchk/url2app/raw/main/host/nix/install.sh | bash
     ```
 
-  - **Alternatively, more secure way:**
-    - Download install script:
-      ```sh
-      wget -P /tmp https://github.com/shvchk/url2app/raw/main/host/nix/install.sh
-      ```
-
-    - Review install script at `/tmp/install.sh`
-
-    - Run it:
-      ```sh
-      bash /tmp/install.sh
-      ```
+  This will do everything described in **Manual** subsection below, automatically.
 
   Example script `~/.local/bin/url2app.sh` has several handlers, but only one active: `notify-send` — which will just show you a notification with a URL. Uncomment, change or add handlers as you like.
 
