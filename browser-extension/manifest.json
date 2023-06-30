@@ -4,7 +4,6 @@
   "version": "1.0",
   "manifest_version": 3,
   "permissions": ["activeTab", "storage", "contextMenus"],
-  "host_permissions": ["<all_urls>"],
   "icons": {
     "48": "images/logo-48.png",
     "96": "images/logo-96.png",
