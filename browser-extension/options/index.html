@@ -4,12 +4,16 @@
     <meta charset='utf-8'>
     <title>Options</title>
     <style>
+      * {
+        font-family: system-ui, -apple-system, sans-serif;
+      }
       #allowedUrlPatterns {
         display: block;
       }
     </style>
   </head>
   <body>
+    Allowed <a href='https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/Match_patterns'>URL match patterns</a>:
     <textarea id='allowedUrlPatterns' cols='40' rows='10' placeholder='*://*.example.com/*'></textarea>
     <button id='save'>Save</button>
     <div id='info'></div>
