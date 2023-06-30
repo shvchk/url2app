@@ -1,0 +1,18 @@
+diff --git a/manifest.json b/manifest.json
+index 30a3957..d0cf2b4 100644
+--- a/manifest.json
++++ b/manifest.json
+@@ -15,7 +15,12 @@
+     "open_in_tab": true
+   },
+   "background": {
+-    "service_worker": "worker.js",
++    "scripts": ["worker.js"],
+     "type": "module"
++  },
++  "browser_specific_settings": {
++    "gecko": {
++      "id": "url2app@shevchuk"
++    }
+   }
+ }
