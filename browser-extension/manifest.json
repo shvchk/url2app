@@ -3,6 +3,7 @@
   "description": "Open any page / link / URL in external app using url2app:// protocol handler",
   "version": "1.1",
   "manifest_version": 3,
+  "homepage_url": "https://github.com/shvchk/url2app",
   "permissions": ["activeTab", "storage", "contextMenus"],
   "icons": {
     "48": "images/logo-48.png",
