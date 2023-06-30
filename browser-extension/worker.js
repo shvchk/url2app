@@ -1,4 +1,4 @@
-import './util/browser-polyfill.min.js';
+import './util/browser-polyfill.js';
 import {defaultPrefs} from './defaultPrefs.js';
 
 const prefs = defaultPrefs;
