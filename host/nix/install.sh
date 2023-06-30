@@ -5,7 +5,7 @@ set -euo pipefail
 repo_cdn="https://cdn.jsdelivr.net/gh/shvchk/url2app"
 
 desktop_file_name="url2app.desktop"
-desktop_file_dir="${XDG_DATA_HOMES:-$HOME/.local/share}/applications"
+desktop_file_dir="${XDG_DATA_HOME:-$HOME/.local/share}/applications"
 desktop_file_url="${repo_cdn}/host/nix/${desktop_file_name}"
 
 exec_file_name="url2app.sh"
