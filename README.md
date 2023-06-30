@@ -3,7 +3,7 @@
 Browser extension to open any page / link / URL in any external app using `url2app://` protocol handler. **No** running native client required.
 
 
-## Browser-side installation
+## Installation
 
 1. Install browser extension
 
