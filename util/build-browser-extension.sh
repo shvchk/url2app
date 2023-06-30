@@ -13,7 +13,8 @@ case $1 in
   firefox)
     cd "$ext_dir"
     git apply -v --directory="$ext_dir" "manifest.firefox.patch"
-    zip -r -FS "../${ext_name}.xpi" *
+    rm -f "../${ext_name}.xpi" || :
+    zip -r "../${ext_name}.xpi" *
     git apply -v -R --directory="$ext_dir" "manifest.firefox.patch"
     ;;
 
