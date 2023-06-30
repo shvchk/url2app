@@ -1,7 +1,7 @@
 {
   "name": "url2app",
-  "description": "",
-  "version": "1.0",
+  "description": "Open any page / link / URL in external app using url2app:// protocol handler",
+  "version": "1.1",
   "manifest_version": 3,
   "permissions": ["activeTab", "storage", "contextMenus"],
   "icons": {
