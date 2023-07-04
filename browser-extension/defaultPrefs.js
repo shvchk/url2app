@@ -1,5 +1,5 @@
 const defaultPrefs = {
-  'allowedUrlPatterns': ['*://*/*']
+  allowedUrlPatterns: ['*://*/*']
 }
 
 export {

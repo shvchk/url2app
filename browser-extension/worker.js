@@ -3,17 +3,17 @@ import {defaultPrefs} from './defaultPrefs.js';
 
 const prefs = defaultPrefs;
 const menus = {
-  'page': { // id suffix, used in contextMenus.create → id
-    'contexts': ['page'], // ContextType, as in contextMenus.create → contexts
-    'srcProp': 'pageUrl' // OnClickData, as in contextMenus.onClicked event info
+  page: { // id suffix, used in contextMenus.create → id
+    contexts: ['page'], // ContextType, as in contextMenus.create → contexts
+    srcProp: 'pageUrl' // OnClickData, as in contextMenus.onClicked event info
   },
-  'link': {
-    'contexts': ['link'],
-    'srcProp': 'linkUrl'
+  link: {
+    contexts: ['link'],
+    srcProp: 'linkUrl'
   },
-  'media': {
-    'contexts': ['image', 'audio', 'video'],
-    'srcProp': 'srcUrl'
+  media: {
+    contexts: ['image', 'audio', 'video'],
+    srcProp: 'srcUrl'
   }
 }
 
@@ -38,7 +38,7 @@ browser.runtime.onInstalled.addListener(once);
 function updateMenus(menus, prefs) {
   for (const m in menus) {
     browser.contextMenus.update(`url2app-${m}`, {
-      'targetUrlPatterns': prefs.allowedUrlPatterns
+      targetUrlPatterns: prefs.allowedUrlPatterns
     });
   }
 }
@@ -46,10 +46,10 @@ function updateMenus(menus, prefs) {
 function createMenus(menus, prefs) {
   for (const m in menus) {
     browser.contextMenus.create({
-      'id': `url2app-${m}`,
-      'title': `Open ${m} in app`,
-      'contexts': menus[m].contexts,
-      'targetUrlPatterns': prefs.allowedUrlPatterns
+      id: `url2app-${m}`,
+      title: `Open ${m} in app`,
+      contexts: menus[m].contexts,
+      targetUrlPatterns: prefs.allowedUrlPatterns
     });
   }
 }
