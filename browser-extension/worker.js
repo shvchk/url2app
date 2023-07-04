@@ -1,5 +1,5 @@
 import './util/browser-polyfill.js';
-import {defaultPrefs} from './defaultPrefs.js';
+import { defaultPrefs, getPrefs } from './prefs.js';
 
 const prefs = defaultPrefs;
 const menus = {
@@ -21,12 +21,12 @@ browser.storage.onChanged.addListener(updatedPrefs => {
   Object.keys(updatedPrefs).forEach(k => {
     prefs[k] = updatedPrefs[k].newValue;
   });
-  
+
   updateMenus(menus, prefs);
 });
 
-// Prefs are only up-to-date on the first run. For all other needs call storage.local.get().then()
-const once = () => browser.storage.local.get(defaultPrefs).then(restoredPrefs => {
+// Prefs are only up-to-date on the first run. For all other needs call getPrefs().then()
+const once = () => getPrefs().then(restoredPrefs => {
   Object.assign(prefs, restoredPrefs);
   createMenus(menus, prefs);
 });

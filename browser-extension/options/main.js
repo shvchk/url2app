@@ -1,10 +1,10 @@
 import '../util/browser-polyfill.js';
-import {defaultPrefs} from '../defaultPrefs.js';
+import { defaultPrefs, getPrefs } from '../prefs.js';
 
 const info = document.getElementById('info');
 
 function restore() {
-  browser.storage.local.get(defaultPrefs).then(prefs => {
+  getPrefs().then(prefs => {
     document.getElementById('allowedUrlPatterns').value = prefs.allowedUrlPatterns.join('\n');
   });
 }
