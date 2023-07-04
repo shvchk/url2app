@@ -1,6 +1,6 @@
 # url2app
 
-Browser extension to open any page / link / URL in any external app using `url2app://` protocol handler. **No** running native client required.
+Browser extension to open any page / link / URL in any external app using `x-url2app://` protocol handler. **No** running native client required.
 
 
 ## Installation
@@ -11,7 +11,7 @@ Browser extension to open any page / link / URL in any external app using `url2a
 
     - Chrome and Chromium-based: [load unpacked extension](https://developer.chrome.com/extensions/getstarted#unpacked) for now
 
-2. Create `url2app://` protocol handler script and register it with your host OS, see [Host-side installation](#Host-side-installation) section.
+2. Create `x-url2app://` protocol handler script and register it with your host OS, see [Host-side installation](#Host-side-installation) section.
 
 3. Right-click on any page or link → Open in app.
 
@@ -48,9 +48,9 @@ Browser extension to open any page / link / URL in any external app using `url2a
 
   - Create a `.desktop` file (e.g. `~/.local/share/applications/url2app.desktop`) to run that script, see [example `url2app.desktop`](host/nix/url2app.desktop)
 
-  - Register that `.desktop` file as a `url2app://` protocol handler:
+  - Register that `.desktop` file as a `x-url2app://` protocol handler:
     ```sh
-    xdg-mime default ~/.local/share/applications/url2app.desktop x-scheme-handler/url2app
+    xdg-mime default ~/.local/share/applications/url2app.desktop x-scheme-handler/x-url2app
     ```
 
   - Rebuild database of MIME types handlers:
@@ -62,4 +62,16 @@ Browser extension to open any page / link / URL in any external app using `url2a
 
 ### Windows
 
-Coming soon...
+- **Automatic**
+  - Review [install script](host/windows/install.ps1)
+
+  - [Download](https://github.com/shvchk/url2app/raw/main/host/windows/install.ps1) and run it:
+
+    - from the file manager: right click → Run with PowerShell
+
+    - or from the terminal:
+      ```pwsh
+      irm https://github.com/shvchk/url2app/raw/main/host/windows/install.ps1 | iex
+      ```
+
+  Example script `%LocalAppData%/url2app.js` has several handlers, which are commented out by default. Uncomment, change or add handlers as you like.
