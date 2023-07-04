@@ -1,7 +1,7 @@
 #! /usr/bin/env sh
 
 # Clean incoming URL of url2app:// prefix
-url="$(echo -n "$1" | sed 's|url2app://||')"
+url="$(echo -n "$1" | sed 's|x-url2app://||')"
 
 case $url in
   #*pdf)
@@ -17,5 +17,5 @@ case $url in
   #  GIO_USE_VFS=gvfs gimp "$url" & ;;
 
   *)
-    notify-send "Example url2app:// handler" "$url" & ;;
+    notify-send "Example x-url2app:// handler" "$url" & ;;
 esac

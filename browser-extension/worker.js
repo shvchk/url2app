@@ -52,11 +52,11 @@ browser.action.onClicked.addListener(function (i) {
     active: true,
     currentWindow: true
   }, ([currentTab]) => {
-    browser.tabs.update({ url: 'url2app://' + currentTab.url });
+    browser.tabs.update({ url: 'x-url2app://' + currentTab.url });
   });
 });
 
 browser.contextMenus.onClicked.addListener(link => {
   const url = link.linkUrl || link.pageUrl;
-  browser.tabs.update({ url: 'url2app://' + url });
+  browser.tabs.update({ url: 'x-url2app://' + url });
 });

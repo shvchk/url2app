@@ -1,6 +1,6 @@
 [Desktop Entry]
 Type=Application
-Name=url2app protocol handler
-Exec=url2app.sh "%u"
+Name=x-url2app protocol handler
+Exec=url2app.sh %u
 StartupNotify=false
-MimeType=x-scheme-handler/url2app;
+MimeType=x-scheme-handler/x-url2app;
