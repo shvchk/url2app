@@ -74,4 +74,4 @@ Browser extension to open any page / link / URL in any external app using `x-url
       irm https://github.com/shvchk/url2app/raw/main/host/windows/install.ps1 | iex
       ```
 
-  Example script `%LocalAppData%/url2app.js` has several handlers, which are commented out by default. Uncomment, change or add handlers as you like.
+  Example script `%LocalAppData%/url2app/url2app.js` has several handlers, which are commented out by default. Uncomment, change or add handlers as you like.
