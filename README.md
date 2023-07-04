@@ -50,6 +50,11 @@ Browser extension redirects page or link you choose to custom `x-url2app://` pro
 
   - Create a script (e.g. `~/.local/bin/url2app.sh`) to redirect incoming links to actual apps, see [example `url2app.sh`](host/nix/url2app.sh)
 
+  - Make it executable
+    ```sh
+    chmod +x ~/.local/bin/url2app.sh
+    ```
+
   - Create a `.desktop` file (e.g. `~/.local/share/applications/url2app.desktop`) to run that script, see [example `url2app.desktop`](host/nix/url2app.desktop)
 
   - Register that `.desktop` file as a `x-url2app://` protocol handler:
