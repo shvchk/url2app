@@ -1,6 +1,10 @@
 # url2app
 
-Browser extension to open any page / link / URL in any external app using `x-url2app://` protocol handler. **No** running native client required.
+Browser extension to open any page / link / URL in any external app. **No** running native client required.
+
+## How does it work
+
+Browser extension redirects page or link you choose to custom `x-url2app://` protocol URL, which is then handled by local, user-defined protocol handler script. Example handler script: [url2app.sh](host/nix/url2app.sh)
 
 
 ## Installation
@@ -11,20 +15,20 @@ Browser extension to open any page / link / URL in any external app using `x-url
 
     - Chrome and Chromium-based: [load unpacked extension](https://developer.chrome.com/extensions/getstarted#unpacked) for now
 
-2. Create `x-url2app://` protocol handler script and register it with your host OS, see [Host-side installation](#Host-side-installation) section.
+2. Create `x-url2app://` protocol handler script and register it with your host OS, see [Host-side installation](#host-side-installation) section for [Linux / *BSD](#linux--bsd) or [Windows](#windows).
 
-3. Right-click on any page or link → Open in app.
-
-    Clicking extension icon in the toolbar does the same for the current page.
+3. Right-click on any page or link → Open in app. Or click on the extension icon in the toolbar.
 
     On the first time, browser will ask for confirmation, you can check "Always allow..." to open links without confimation in future.
+
+    '*Good news! x-url2app:// protocol handler is working fine!*' message should appear.
 
 4. By default, 'Open in app' menu entry shows on all pages and for all links. You can change this in extension options, providing your own list of [host match patterns](https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/Match_patterns).
 
 
 ## Host-side installation
 
-### Linux / FreeBSD
+### Linux / *BSD
 
 - **Automatic**
 
@@ -37,7 +41,7 @@ Browser extension to open any page / link / URL in any external app using `x-url
 
   This will do everything described in **Manual** subsection below, automatically.
 
-  Example script `~/.local/bin/url2app.sh` has several handlers, but only one active: `notify-send` — which will just show you a notification with a URL. Uncomment, change or add handlers as you like.
+  [Example script](host/nix/url2app.sh) `~/.local/bin/url2app.sh` has several handlers, which are disabled by default. Uncomment, change or add handlers as you like.
 
 - **Manual**
 
@@ -65,13 +69,11 @@ Browser extension to open any page / link / URL in any external app using `x-url
 - **Automatic**
   - Review [install script](host/windows/install.ps1)
 
-  - [Download](https://github.com/shvchk/url2app/raw/main/host/windows/install.ps1) and run it:
+  - [Download](https://github.com/shvchk/url2app/raw/main/host/windows/install.ps1) and run it: right click → Run with PowerShell
 
-    - from the file manager: right click → Run with PowerShell
-
-    - or from the terminal:
+    The same can be done with one command from the terminal:
       ```pwsh
       irm https://github.com/shvchk/url2app/raw/main/host/windows/install.ps1 | iex
       ```
 
-  Example script `%LocalAppData%/url2app/url2app.js` has several handlers, which are commented out by default. Uncomment, change or add handlers as you like.
+  [Example script](host/windows/url2app.js) `%LocalAppData%/url2app/url2app.js` has several handlers, which are disabled by default. Uncomment, change or add handlers as you like.
