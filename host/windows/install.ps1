@@ -11,7 +11,7 @@ $protocolCmd = "wscript ""$handlerPath"" ""%1"""
 
 
 try {
-  New-Item -Path "$handlerDir" -Force
+  New-Item -Path "$handlerDir" -ItemType Directory -Force
   Invoke-WebRequest "$handlerUrl" -OutFile "$handlerPath"
 
   New-Item -Path "$protocolDir" -Force
