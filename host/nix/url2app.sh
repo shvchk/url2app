@@ -17,5 +17,9 @@ case $url in
   #  GIO_USE_VFS=gvfs gimp "$url" & ;;
 
   *)
-    notify-send "Example x-url2app:// handler" "$url" & ;;
+    line1="x-url2app:// protocol handler is working fine!"
+    line2="This URL has no handler defined, though: ${url}"
+    line3="You can add one in $0"
+    notify-send -a url2app "Good news!" "${line1}\n\n${line2}\n${line3}" &
+    ;;
 esac
