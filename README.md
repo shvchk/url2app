@@ -4,7 +4,7 @@ Browser extension to open any page / link / URL in any external app. **No** runn
 
 ## How does it work
 
-Browser extension redirects page or link you choose to custom `x-url2app://` protocol URL, which is then handled by local, user-defined protocol handler script. Example handler script: [url2app.sh](host/nix/url2app.sh)
+Browser extension redirects page or link you choose to custom `x-url2app://` protocol URL, which is then handled by user-defined protocol handler script (e.g. [url2app.sh](host/nix/url2app.sh)).
 
 
 ## Installation
