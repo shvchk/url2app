@@ -2,8 +2,8 @@ $name = "url2app"
 $protocol = "x-$name"
 
 $handlerDir = "${env:LocalAppData}\${name}"
-$handlerPath = "${handlerDir}\{$name}.js"
-$handlerUrl = "https://github.com/shvchk/url2app/raw/main/host/windows/url2app.js"
+$handlerPath = "${handlerDir}\${name}.js"
+$handlerUrl = "https://github.com/shvchk/url2app/raw/main/host/windows/${name}.js"
 
 $protocolDir = "HKCU:\SOFTWARE\Classes\$protocol"
 $protocolCmdDir = "${protocolDir}\shell\open\command"
