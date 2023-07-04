@@ -1,7 +1,7 @@
-#! /usr/bin/env sh
+#! /usr/bin/env bash
 
 # Clean incoming URL of url2app:// prefix
-url="$(echo -n "$1" | sed 's|x-url2app://||')"
+url="${1#x-url2app://}"
 
 case $url in
   #*pdf)
