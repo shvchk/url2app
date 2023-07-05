@@ -1,6 +1,6 @@
 # url2app
 
-Browser extension to open any page / link / URL in any external app. **No** running native client required.
+Browser extension to open any page or link in any external app. **No** running native client required.
 
 ## How does it work
 
