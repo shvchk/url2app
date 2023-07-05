@@ -7,16 +7,18 @@ url="${1#x-url2app://}"
 media_type="${url#*###mediaType=}"
 url="${url%###mediaType=*}"
 
-case $media_type in
-  image)
-    GIO_USE_VFS=gvfs gimp "$url" & exit ;;
-  audio)
-    mpv --force-window --keep-open "$url" & exit ;;
-  video)
-    mpv --keep-open "$url" & exit ;;
-esac
+# Example media type hint handling, enable / edit as needed
+#case $media_type in
+#  image)
+#    GIO_USE_VFS=gvfs gimp "$url" & exit ;;
+#  audio)
+#    mpv --force-window --keep-open "$url" & exit ;;
+#  video)
+#    mpv --keep-open "$url" & exit ;;
+#esac
 
 # Hints didn't help or are off, now we have to guess by URL only
+# Example URL handling, enable / edit as needed
 case $url in
   #*pdf)
   #  okular "$url" & ;;
