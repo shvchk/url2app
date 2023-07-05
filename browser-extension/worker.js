@@ -66,5 +66,11 @@ browser.action.onClicked.addListener(function (i) {
 browser.contextMenus.onClicked.addListener(link => {
   const menuId = link.menuItemId.replace('url2app-', '');
   const url = link[menus[menuId].srcProp];
-  browser.tabs.update({ url: 'x-url2app://' + url });
+  let mediaTypeHint = '';
+
+  if (menuId === 'media' && prefs.mediaTypeHintEnabled) {
+    mediaTypeHint = `###mediaType=${link.mediaType}`;
+  }
+
+  browser.tabs.update({ url: 'x-url2app://' + url + mediaTypeHint });
 });

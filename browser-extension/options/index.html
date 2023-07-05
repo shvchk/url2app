@@ -7,15 +7,19 @@
       * {
         font-family: system-ui, -apple-system, sans-serif;
       }
-      #allowedUrlPatterns {
-        display: block;
-      }
     </style>
   </head>
   <body>
-    Allowed <a href='https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/Match_patterns'>URL match patterns</a>:
-    <textarea id='allowedUrlPatterns' cols='40' rows='10' placeholder='*://*.example.com/*'></textarea>
-    <button id='save'>Save</button>
+    <div class='settings-row'>
+      Allowed <a href='https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/Match_patterns'>URL match patterns</a>:
+      <textarea id='allowedUrlPatterns' cols='40' rows='10' placeholder='*://*.example.com/*'></textarea>
+    </div>
+    <div class='settings-row'>
+      <input type="checkbox" id="mediaTypeHintEnabled"><label for="mediaTypeHintEnabled">Enable media type hint suffix (e.g. <code>###mediaType=video</code>)</label>
+    </div>
+    <div class='settings-row'>
+      <button id='save'>Save</button>
+    </div>
     <div id='info'></div>
     <script type='module' src='main.js'></script>
   </body>

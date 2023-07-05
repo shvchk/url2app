@@ -1,5 +1,6 @@
 const defaultPrefs = {
-  allowedUrlPatterns: ['*://*/*']
+  allowedUrlPatterns: ['*://*/*'],
+  mediaTypeHintEnabled: false
 }
 
 const getPrefs = (prefs = defaultPrefs) => chrome.storage.local.get(prefs);

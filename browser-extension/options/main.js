@@ -6,6 +6,7 @@ const info = document.getElementById('info');
 function restore() {
   getPrefs().then(prefs => {
     document.getElementById('allowedUrlPatterns').value = prefs.allowedUrlPatterns.join('\n');
+    document.getElementById('mediaTypeHintEnabled').checked = prefs.mediaTypeHintEnabled;
   });
 }
 
@@ -15,6 +16,7 @@ function save() {
       .split(/[,\n]/)
       .map(s => s.trim())
       .filter((h, i, l) => h && l.indexOf(h) === i),
+    mediaTypeHintEnabled: document.getElementById('mediaTypeHintEnabled').checked,
   }).then(() => {
     info.textContent = 'Saved';
     restore();
