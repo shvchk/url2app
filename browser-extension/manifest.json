@@ -12,7 +12,8 @@
   },
   "action": {},
   "options_ui": {
-    "page": "options/index.html"
+    "page": "options/index.html",
+    "browser_style": false
   },
   "background": {
     "service_worker": "worker.js",
