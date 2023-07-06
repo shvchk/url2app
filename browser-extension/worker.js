@@ -15,33 +15,13 @@ const menus = {
     contexts: ['image', 'audio', 'video'],
     srcProp: 'srcUrl'
   }
-}
-
-browser.storage.onChanged.addListener(updatedPrefs => {
-  Object.keys(updatedPrefs).forEach(k => {
-    prefs[k] = updatedPrefs[k].newValue;
-  });
-
-  updateMenus(menus, prefs);
-});
+};
 
 // Prefs are only up-to-date on the first run. For all other needs call getPrefs().then()
 const once = () => getPrefs().then(restoredPrefs => {
   Object.assign(prefs, restoredPrefs);
   createMenus(menus, prefs);
 });
-
-browser.runtime.onStartup.addListener(once);
-browser.runtime.onInstalled.addListener(once);
-
-
-function updateMenus(menus, prefs) {
-  for (const m in menus) {
-    browser.contextMenus.update(`url2app-${m}`, {
-      targetUrlPatterns: prefs.allowedUrlPatterns
-    });
-  }
-}
 
 function createMenus(menus, prefs) {
   for (const m in menus) {
@@ -53,6 +33,25 @@ function createMenus(menus, prefs) {
     });
   }
 }
+
+function updateMenus(menus, prefs) {
+  for (const m in menus) {
+    browser.contextMenus.update(`url2app-${m}`, {
+      targetUrlPatterns: prefs.allowedUrlPatterns
+    });
+  }
+}
+
+browser.runtime.onStartup.addListener(once);
+browser.runtime.onInstalled.addListener(once);
+
+browser.storage.onChanged.addListener(updatedPrefs => {
+  Object.keys(updatedPrefs).forEach(k => {
+    prefs[k] = updatedPrefs[k].newValue;
+  });
+
+  updateMenus(menus, prefs);
+});
 
 browser.action.onClicked.addListener(function (i) {
   browser.tabs.query({
