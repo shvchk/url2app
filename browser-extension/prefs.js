@@ -3,7 +3,7 @@ const defaultPrefs = {
   mediaTypeHintEnabled: false
 }
 
-const getPrefs = (prefs = defaultPrefs) => chrome.storage.local.get(prefs);
+const getPrefs = (prefs = defaultPrefs) => browser.storage.local.get(prefs);
 
 export {
   defaultPrefs,
