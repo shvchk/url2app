@@ -9,7 +9,7 @@ Browser extension redirects page or link you choose to custom `x-url2app://` pro
 
 ## Video demo
 
-[![image](util/screenshot.webp)](https://youtu.be/NwOq3RuCd0k)
+[![image](misc/screenshot.webp)](https://youtu.be/NwOq3RuCd0k)
 
 
 ## Installation
