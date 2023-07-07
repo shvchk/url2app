@@ -5,14 +5,17 @@ const prefs = defaultPrefs;
 const menus = {
   page: { // id suffix, used in contextMenus.create → id
     contexts: ['page'], // ContextType, as in contextMenus.create → contexts
+    urlPatternsProp: 'documentUrlPatterns',
     srcProp: 'pageUrl' // OnClickData, as in contextMenus.onClicked event info
   },
   link: {
     contexts: ['link'],
+    urlPatternsProp: 'targetUrlPatterns',
     srcProp: 'linkUrl'
   },
   media: {
     contexts: ['image', 'audio', 'video'],
+    urlPatternsProp: 'targetUrlPatterns',
     srcProp: 'srcUrl'
   }
 };
@@ -29,7 +32,7 @@ function createMenus(menus, prefs) {
       id: `url2app-${m}`,
       title: `Open ${m} in app`,
       contexts: menus[m].contexts,
-      targetUrlPatterns: prefs.allowedUrlPatterns
+      [menus[m].urlPatternsProp]: prefs.allowedUrlPatterns[m],
     });
   }
 }
@@ -37,7 +40,7 @@ function createMenus(menus, prefs) {
 function updateMenus(menus, prefs) {
   for (const m in menus) {
     browser.contextMenus.update(`url2app-${m}`, {
-      targetUrlPatterns: prefs.allowedUrlPatterns
+      [menus[m].urlPatternsProp]: prefs.allowedUrlPatterns[m]
     });
   }
 }
