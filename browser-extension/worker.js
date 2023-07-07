@@ -23,6 +23,9 @@ const menus = {
 // Prefs are only up-to-date on the first run. For all other needs call getPrefs().then()
 const once = () => getPrefs().then(restoredPrefs => {
   Object.assign(prefs, restoredPrefs);
+  if (! prefs.allowedUrlPatterns.hasOwnProperty('page')) {
+    prefs.allowedUrlPatterns = defaultPrefs.allowedUrlPatterns
+  }
   createMenus(menus, prefs);
 });
 

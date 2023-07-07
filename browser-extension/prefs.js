@@ -1,5 +1,9 @@
 const defaultPrefs = {
-  allowedUrlPatterns: ['*://*/*'],
+  allowedUrlPatterns: {
+    page: ['*://*/*'],
+    link: ['*://*/*'],
+    media: ['*://*/*'],
+  },
   mediaTypeHintEnabled: false
 }
 

@@ -8,8 +8,16 @@
   <body>
     <div class='container p-2'>
       <label class='form-label d-block mb-2'>
-        Allowed <a href='https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/Match_patterns'>URL match patterns</a>:
-        <textarea id='allowedUrlPatterns' class='form-control mt-1' rows='5' placeholder='*://*.example.com/*'></textarea>
+        Show page menu item for these page URLs (see <a href='https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/Match_patterns'>URL match patterns</a>):
+        <textarea id='allowedUrlPatterns-page' class='form-control mt-1' rows='5' placeholder='*://*.example.com/*'></textarea>
+      </label>
+      <label class='form-label d-block mb-2'>
+        Show link menu item for these link URLs (see <a href='https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/Match_patterns'>URL match patterns</a>):
+        <textarea id='allowedUrlPatterns-link' class='form-control mt-1' rows='5' placeholder='*://*.example.com/*'></textarea>
+      </label>
+      <label class='form-label d-block mb-2'>
+        Show media (image, audio, video) element menu item for these media source URLs (see <a href='https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/Match_patterns'>URL match patterns</a>):
+        <textarea id='allowedUrlPatterns-media' class='form-control mt-1' rows='5' placeholder='*://*.example.com/*'></textarea>
       </label>
       <label class='form-check-label d-block mb-2'>
         <input type='checkbox' id='mediaTypeHintEnabled' class='form-check-input'>
