@@ -21,7 +21,7 @@ const menus = {
 };
 
 // Prefs are only up-to-date on the first run. For all other needs call getPrefs().then()
-const once = () => getPrefs().then(restoredPrefs => {
+const init = () => getPrefs().then(restoredPrefs => {
   Object.assign(prefs, restoredPrefs);
   if (! prefs.allowedUrlPatterns.hasOwnProperty('page')) {
     prefs.allowedUrlPatterns = defaultPrefs.allowedUrlPatterns
@@ -30,6 +30,8 @@ const once = () => getPrefs().then(restoredPrefs => {
 });
 
 function createMenus(menus, prefs) {
+  browser.contextMenus.removeAll();
+
   for (const m in menus) {
     browser.contextMenus.create({
       id: `url2app-${m}`,
@@ -48,8 +50,8 @@ function updateMenus(menus, prefs) {
   }
 }
 
-browser.runtime.onStartup.addListener(once);
-browser.runtime.onInstalled.addListener(once);
+browser.runtime.onStartup.addListener(init);
+browser.runtime.onInstalled.addListener(init);
 
 browser.storage.onChanged.addListener(updatedPrefs => {
   Object.keys(updatedPrefs).forEach(k => {
@@ -79,3 +81,5 @@ browser.contextMenus.onClicked.addListener(link => {
 
   browser.tabs.update({ url: 'x-url2app://' + url + mediaTypeHint });
 });
+
+init();
