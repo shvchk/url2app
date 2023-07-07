@@ -7,22 +7,25 @@
   </head>
   <body>
     <div class='container p-2'>
-      <label class='form-label d-block mb-2'>
-        Show page menu item for these page URLs (see <a href='https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/Match_patterns'>URL match patterns</a>):
+      <label class='form-label d-block mb-4'>
+        Show menu item for pages with these URLs: <sup>1</sup>
         <textarea id='allowedUrlPatterns-page' class='form-control mt-1' rows='5' placeholder='*://*.example.com/*'></textarea>
       </label>
-      <label class='form-label d-block mb-2'>
-        Show link menu item for these link URLs (see <a href='https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/Match_patterns'>URL match patterns</a>):
+      <label class='form-label d-block mb-4'>
+        Show menu item for links with these target URLs: <sup>1</sup>
         <textarea id='allowedUrlPatterns-link' class='form-control mt-1' rows='5' placeholder='*://*.example.com/*'></textarea>
       </label>
-      <label class='form-label d-block mb-2'>
-        Show media (image, audio, video) element menu item for these media source URLs (see <a href='https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/Match_patterns'>URL match patterns</a>):
+      <label class='form-label d-block mb-4'>
+        Show menu item for media elements (image, audio, video) with these source URLs: <sup>1</sup>
         <textarea id='allowedUrlPatterns-media' class='form-control mt-1' rows='5' placeholder='*://*.example.com/*'></textarea>
       </label>
-      <label class='form-check-label d-block mb-2'>
+      <label class='form-check-label d-block mb-4'>
         <input type='checkbox' id='mediaTypeHintEnabled' class='form-check-input'>
         Enable media type hint suffix (e.g. <code>###mediaType=video</code>)
       </label>
+      <div class='mb-2'>
+        <sup>1</sup> Use <a href='https://developer.mozilla.org/docs/Mozilla/Add-ons/WebExtensions/Match_patterns'>URL match patterns</a>
+      </div>
       <button id='save' class='btn btn-primary float-end'>Save</button>
     </div>
     <script type='module' src='main.js'></script>

@@ -1,7 +1,7 @@
 {
   "name": "url2app",
   "description": "Open any page or link in any external app. No running native client required.",
-  "version": "1.2",
+  "version": "1.3",
   "manifest_version": 3,
   "homepage_url": "https://github.com/shvchk/url2app",
   "permissions": ["activeTab", "storage", "contextMenus"],
